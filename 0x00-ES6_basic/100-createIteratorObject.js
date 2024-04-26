@@ -3,15 +3,16 @@ export default function createIteratorObject(report) {
   let currentIndex = 0;
 
   return {
-    next: function() {
+    next() {
       if (currentIndex < allEmployees.length) {
-        return { value: allEmployees[currentIndex++], done: false };
-      } else {
-        return { done: true };
+        const currentValue = allEmployees[currentIndex];
+        currentIndex += 1;
+        return { value: currentValue, done: false };
       }
+      return { done: true };
     },
-    [Symbol.iterator]: function() {
+    [Symbol.iterator]() {
       return this;
-    }
+    },
   };
 }
