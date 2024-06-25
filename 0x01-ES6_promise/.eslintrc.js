@@ -32,4 +32,3 @@ module.exports = {
       excludedFiles: 'babel.config.js',
     }
   ]
-};
