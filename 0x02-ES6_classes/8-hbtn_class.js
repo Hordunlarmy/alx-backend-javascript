@@ -18,8 +18,9 @@ export default class HolbertonClass {
   }
 
   set location(value) {
-    if (typeof value !== 'string')
+    if (typeof value !== 'string') {
       throw new TypeError('location is not a string');
+    }
     this._location = value;
   }
 
