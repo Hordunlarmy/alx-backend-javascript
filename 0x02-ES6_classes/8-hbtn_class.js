@@ -7,13 +7,14 @@ export default class HolbertonClass {
   get size() {
     return this._size;
   }
-  get location() {
-    return this._location;
-  }
 
   set size(value) {
     if (typeof value !== 'number') throw new TypeError('size is NaN');
     this._size = value;
+  }
+
+  get location() {
+    return this._location;
   }
 
   set location(value) {
