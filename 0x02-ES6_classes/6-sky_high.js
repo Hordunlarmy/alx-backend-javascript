@@ -1,4 +1,4 @@
-import Building from './5-building.js';
+import Building from './5-building';
 
 export default class SkyHighBuilding extends Building {
   constructor(sqft, floors) {
@@ -6,13 +6,13 @@ export default class SkyHighBuilding extends Building {
     this.floors = floors;
   }
 
-  get floor() {
-    return this._floor;
+  get floors() {
+    return this._floors;
   }
 
-  set floor(value) {
-    if (typeof value !== 'numner') throw new TypeError('floor is not a number');
-    this._floor = value;
+  set floors(value) {
+    if (typeof value !== 'number') throw new TypeError('floors is NaN');
+    this._floors = value;
   }
 
   evacuationWarningMessage() {
