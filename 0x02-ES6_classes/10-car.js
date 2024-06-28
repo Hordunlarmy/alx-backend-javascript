@@ -10,8 +10,9 @@ export default class Car {
   }
 
   set brand(value) {
-    if (typeof value !== 'string')
+    if (typeof value !== 'string' && typeof value !== 'undefined') {
       throw new TypeError('brand is not a string.');
+    }
     this._brand = value;
   }
 
@@ -20,8 +21,9 @@ export default class Car {
   }
 
   set motor(value) {
-    if (typeof value !== 'string')
+    if (typeof value !== 'string' && typeof value !== 'undefined') {
       throw new TypeError('motor is not a string.');
+    }
     this._motor = value;
   }
 
@@ -30,16 +32,19 @@ export default class Car {
   }
 
   set color(value) {
-    if (typeof value !== 'string')
+    if (typeof value !== 'string' && typeof value !== 'undefined') {
       throw new TypeError('color is not a string.');
+    }
     this._color = value;
-  }
-
-  cloneCar() {
-    return new this.constructor(this._brand, this._motor, this._color);
   }
 
   static get [Symbol.species]() {
     return this;
+  }
+
+  cloneCar() {
+    const Species = this.constructor[Symbol.species];
+
+    return new Species();
   }
 }
